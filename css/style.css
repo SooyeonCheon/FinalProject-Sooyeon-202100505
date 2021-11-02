@@ -1,11 +1,4 @@
 @import url(reset.css);
-@font-face {
-  font-family: "opensans";
-  src: url("f") format("woff2"), url("fonts/heart_blues-webfont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -13,6 +6,7 @@
 
 body {
   background-color: #f8f6f4;
+  font-family: sans-serif;
 }
 
 .row1 {

@@ -1,19 +1,11 @@
 @import url(reset.css);
-@mixin customfont($fontname,$woff2url,$woffurl){
-    font-family: $fontname;
-    src: url($woff2url) format('woff2'),
-         url($woffurl) format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face{
-    @include customfont('opensans', 'f', 'fonts/heart_blues-webfont.woff')
-}
+
 *{
     box-sizing: border-box;
 }
 body{
     background-color: rgb(248,246,244);
+    font-family: sans-serif;
 }
 .row1{
     display: grid;
