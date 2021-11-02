@@ -6,12 +6,19 @@
 body{
     background-color: rgb(248,246,244);
     font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    margin: 0;
+    padding: 0;
 }
 .row1{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(440px,1fr));
-    padding: 1rem 10rem;
+    padding: 7% 10%;
     .content1{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
         h1{
             width: 90%;
             font-size: 4em;
@@ -36,8 +43,26 @@ body{
                 top: 15px;
                 content: "";
             }
-        }    
-    }
+        }
+        .sns1{
+            border-top: 1px solid black;
+            margin-top: 2rem;
+            text-align: right;
+            position: relative;
+            bottom: 0;
+            a{
+                text-decoration: none;
+                display: block;
+                color: black;
+                font-size: 1rem;
+                margin-top: 1rem;
+                transition: 0.4s;
+                &:hover{
+                    color: gray;
+                }
+            }
+        }
+    }    
     .picture1{
         img{
             width: 100%;
@@ -49,51 +74,67 @@ body{
             text-align: right;
         }
     }
-    .sns1{
-        border-top: 1px solid black;
-        text-align: right;
-        position: relative;
-        bottom: 120px;
-        a{
-            text-decoration: none;
-            display: block;
-            color: black;
-            font-size: 1rem;
-            margin-top: 1rem;
+}
+@media screen and (max-width:1200px){
+    .row1{
+        padding: 1rem 0;
+        margin: 0;
+        img{
+            padding: 0 3rem;
         }
-        
     }
 }
 .row2{
-    padding: 5rem 10rem;
+    padding: 7% 10%;
     background-image: url(../img/bg.jpg);
-    background-repeat: no-repeat;
     background-size: contain;
-    background-position: right;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    height: 100%;
     div{
         font-size: 1rem;
-        line-height: 1.5rem;
+        line-height: 2rem;
+        margin: auto;
     }
     img{
         margin: 0;
-        padding: 1px;
+        padding: 0.5rem;
         opacity: 0.8;
     }
 }
+@media screen and (max-width:700px){
+    .row2{
+        padding: 0;
+        margin: 3rem 2rem;
+        div{
+            padding: 0;
+            margin: 2rem 0;
+        }
+    }
+}
 .row3{
-    padding: 5% 10%;
+    padding: 7% 10%;
+    background-image: url(../img/bg3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     h1{
-        font-size: 2rem;
+        font-size: 2.8rem;
         margin-bottom: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
     }
     div{
-        padding: 10%;
-        line-height: 1.5rem;
+        padding: 5%;
+        font-size: 1rem;
+        line-height: 2rem;
     }
 }
 .row4{
     background-color: black;
     position: relative;
+    .brian{
+        padding: 7% 10%;
+    }
     .bg{
     background-image: url(../img/member2.jfif);
     width: 100%;
@@ -105,71 +146,124 @@ body{
     opacity: 0.2;
     }
     h1{
-        font-size: 2rem;
+        font-size: 2.8rem;
         margin-bottom: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
         color: white;
     }
     div{
-        padding: 10%;
-        line-height: 1.5rem;
+        padding: 5%;
+        font-size: 1rem;
+        line-height: 2rem;
         color: white;
     }
     .colorspace{
-        background-color: orange;
+        background-color: rgb(158, 104, 4);
         opacity: 0.2;
         position: relative;
-        right: 20%;
-        margin-top: 10%;
+        right: 15%;
+        margin-top: 7%;
+    }
+}
+@media screen and (max-width:992px){
+    .row4{
+        position: relative;
+        .colorspace{
+            background-color: rgb(158, 104, 4);
+            opacity: 0.2;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 30%;
+            margin-top: 0;
+        }
     }
 }
 .row5{
-    padding: 5% 10%;
-    background-image: url(../img/bg3.jpg);
+    padding: 7% 10%;
     position: relative;
+    .john{
+        padding-top: 3rem;
+        z-index: 1;
+    }
     .bgimage{
-        opacity: 0.7;
+        opacity: 0.5;
         position: relative;
-        right: 10%;
+        right: 9%;
         img{
             width: 120%;
             height: 100%;
         }
     }
     h1{
-        font-size: 2rem;
+        font-size: 2.8rem;
         margin-bottom: 2rem;
-       
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
     }
     p{
-        padding: 10%;
-        line-height: 1.5rem;
+        font-size: 1rem;
+        line-height: 2rem;
     }
+   
     .colorbox{
         width: 30%;
         height: 100px;
         background-color: orange;
-        opacity: 0.5;
+        opacity: 0.3;
         position: absolute;
-        bottom: 5%;
-        left: 25%;
+        bottom: 10%;
+        left: 40%;
+    }
+}
+@media screen and (max-width:992px){
+    .row5{
+        
+        img{
+            width: 70%;
+            padding: 2rem;
+        }
+        .colorbox{
+            display: none;
+        }
     }
 }
 .row6{
     background-color: black;
     color: white;
-    padding: 0;
+    h1{
+        font-size: 2.8rem;
+        margin-bottom: 2rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
+    }
+    p{
+        font-size: 1rem;
+        line-height: 2rem;
+    }
     img{
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: 100%;
     }
     div{
         padding: 0;
     }
     div.content{
-        padding: 5rem;
+        padding: 7rem;
     }
 }
-
+.row7{
+    justify-content: center;
+    background-color: rgb(253,199,77);
+    .slidepic{
+        width:20%;
+        border: 1px solid black;
+        margin: 5rem;
+    }
+}
 footer{
     background-color: rgb(51,51,51);
     padding: 10rem;
