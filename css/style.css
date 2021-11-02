@@ -81,7 +81,7 @@ body {
 }
 
 .row1 .content1 .sns1 a:hover {
-  color: gray;
+  color: brown;
 }
 
 .row1 .picture1 img {
@@ -103,6 +103,15 @@ body {
   .row1 img {
     padding: 0 3rem;
   }
+  .row1 .picture_name {
+    padding: 0 3rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .sns1 a {
+    text-align: center;
+  }
 }
 
 .row2 {
@@ -122,7 +131,7 @@ body {
 
 .row2 img {
   margin: 0;
-  padding: 0.5rem;
+  padding: 0.3rem;
   opacity: 0.8;
 }
 
@@ -152,9 +161,45 @@ body {
 }
 
 .row3 div {
-  padding: 5%;
+  padding: 4%;
   font-size: 1rem;
   line-height: 2rem;
+}
+
+.row3 p {
+  margin-bottom: 3rem;
+}
+
+.row3 a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.801);
+  border: 1px solid rgba(0, 0, 0, 0.801);
+  text-align: center;
+  padding: 16px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.row3 a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: 1px solid black;
+}
+
+@media screen and (max-width: 992px) {
+  .row3 {
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 .row4 {
@@ -246,6 +291,7 @@ body {
 .row5 p {
   font-size: 1rem;
   line-height: 2rem;
+  margin-bottom: 3rem;
 }
 
 .row5 .colorbox {
@@ -258,13 +304,37 @@ body {
   left: 40%;
 }
 
+.row5 a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.801);
+  border: 1px solid rgba(0, 0, 0, 0.801);
+  text-align: center;
+  padding: 16px 20px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.row5 a:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: 1px solid black;
+}
+
 @media screen and (max-width: 992px) {
+  .row5 {
+    text-align: center;
+  }
   .row5 img {
-    width: 70%;
-    padding: 2rem;
+    width: 50%;
+    padding: 4rem;
+    padding-bottom: 2rem;
   }
   .row5 .colorbox {
     display: none;
+  }
+  .row5 .john {
+    padding-top: 1.5rem;
+    z-index: 1;
   }
 }
 
@@ -297,7 +367,17 @@ body {
 }
 
 .row6 div.content {
-  padding: 7rem;
+  padding: 7rem 10rem 7rem 5rem;
+}
+
+@media screen and (max-width: 992px) {
+  .row6 img {
+    width: 90%;
+    margin-left: 5%;
+  }
+  .row6 div.content {
+    padding: 4rem;
+  }
 }
 
 .row7 {
