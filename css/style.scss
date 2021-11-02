@@ -1,0 +1,70 @@
+@import url(reset.css);
+@mixin customfont($fontname,$woff2url,$woffurl){
+    font-family: $fontname;
+    src: url($woff2url) format('woff2'),
+         url($woffurl) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    @include customfont('heart', 'fonts/heart_blues-webfont.woff2', 'fonts/heart_blues-webfont.woff')
+}
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(248,246,244);
+}
+.row1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(440px,1fr));
+    padding: 1rem 10rem;
+    .content1{
+        h1{
+            width: 90%;
+            font-size: 4em;
+            font-family: fantasy;
+            margin: 1rem;
+            justify-self: end;
+            padding: 0 1rem;
+        }
+        .first{
+            font-size: 1rem;
+            line-height: 2rem;
+            width: 60%;
+            margin: 3rem 0 0 10rem;
+            position: relative;
+            &::after{
+                display: block;
+                position: absolute;
+                background-color: brown;
+                width: 70px;
+                height: 2px;
+                left: -100px;
+                top: 15px;
+                content: "";
+            }
+        }    
+    }
+    .picture1{
+        img{
+            width: 100%;
+            padding-top: 4rem;
+        }
+        div{
+            
+        }
+    }
+}
+.row2{
+    padding: 5rem 10rem;
+    div{
+        font-size: 1.2rem;
+        line-height: 2rem;
+    }
+    img{
+        margin: 0;
+        padding: 1px;
+        opacity: 0.8;
+    }
+}
