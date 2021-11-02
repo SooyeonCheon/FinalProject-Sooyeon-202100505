@@ -13,13 +13,6 @@ body{
     margin: 0;
     padding: 0;
 }
-.navbar{
-    img{
-        width: 3rem;
-        margin: 0;
-        padding: 0;
-    }
-}
 .row1{
     padding: 7% 10%;
     .content1{
@@ -91,6 +84,17 @@ body{
         }
         .picture_name{
             padding: 0 3rem;
+        }
+        .content1{
+            h1{
+                margin: 1rem;
+                padding: 1rem 2rem;
+                width: 100%;
+            }
+            .first{
+                padding: 1rem;
+                width: 68%;
+            }
         }
     }
 }
@@ -318,11 +322,12 @@ body{
 @media screen and (max-width:992px){
     .row6{
         img{
-            width: 90%;
-            margin-left: 5%;
+            width: 60%;
+            margin-left: 20%;
+            margin-top: 5%;
         }
         div.content{
-            padding: 4rem;
+            padding: 5rem;
         }
 
     }
@@ -330,10 +335,42 @@ body{
 .row7{
     justify-content: center;
     background-color: rgb(253,199,77);
+    .disco{
+        padding: 5rem 2rem 5rem 5rem;
+        h1{
+            font-size: 2.8rem;
+            margin-bottom: 2rem;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bolder;
+        }
+        ul{
+            display: flex;
+            flex-wrap: wrap;
+            margin-left: 1rem;
+            li{
+                width: 17rem;
+                height: 2rem;
+            }
+        }
+    }
     .slidepic{
-        width:20%;
-        border: 1px solid black;
-        margin: 5rem;
+        width:30%;
+        margin: 3rem;
+    }
+}
+@media screen and (max-width:992px){
+    .row7{
+        text-align: center;
+        .disco{
+            padding: 3rem;
+            position: relative;
+            ul{
+                justify-content: center;
+            }
+        }
+        .slidepic{
+            width: 50%;
+        }
     }
 }
 footer{
