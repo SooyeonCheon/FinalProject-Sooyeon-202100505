@@ -1,7 +1,7 @@
 @import url(reset.css);
 @font-face {
-  font-family: "heart";
-  src: url("fonts/heart_blues-webfont.woff2") format("woff2"), url("fonts/heart_blues-webfont.woff") format("woff");
+  font-family: "opensans";
+  src: url("f") format("woff2"), url("fonts/heart_blues-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
@@ -112,7 +112,7 @@ body {
 }
 
 .row4 {
-  background-color: #2e0000;
+  background-color: black;
   position: relative;
 }
 
@@ -145,5 +145,68 @@ body {
   position: relative;
   right: 20%;
   margin-top: 10%;
+}
+
+.row5 {
+  padding: 5% 10%;
+  background-image: url(../img/bg3.jpg);
+  position: relative;
+}
+
+.row5 .bgimage {
+  opacity: 0.7;
+  position: relative;
+  right: 10%;
+}
+
+.row5 .bgimage img {
+  width: 120%;
+  height: 100%;
+}
+
+.row5 h1 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.row5 p {
+  padding: 10%;
+  line-height: 1.5rem;
+}
+
+.row5 .colorbox {
+  width: 30%;
+  height: 100px;
+  background-color: orange;
+  opacity: 0.5;
+  position: absolute;
+  bottom: 5%;
+  left: 25%;
+}
+
+.row6 {
+  background-color: black;
+  color: white;
+  padding: 0;
+}
+
+.row6 img {
+  margin: 0;
+  padding: 0;
+}
+
+.row6 div {
+  padding: 0;
+}
+
+.row6 div.content {
+  padding: 5rem;
+}
+
+footer {
+  background-color: #333333;
+  padding: 10rem;
+  color: white;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */
