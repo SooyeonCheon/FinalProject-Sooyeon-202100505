@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +6,7 @@
         <link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/style.css">
         <script src="https://kit.fontawesome.com/0f63262170.js" crossorigin="anonymous"></script>
+        <script src="./jquery.js"></script>
         <title>Final Project</title>
     </head>
     <body>
@@ -14,13 +14,89 @@
             <nav class="navbar navbar-expand-lg navbar-dark bg-black">
                 <div class="container-fluid">
                     <a class="navbar-brand ms-5" href="#">MUSIC NEWS</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainmenu">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>  
+                    <span>
+                        <button type="button" id="rgbtn">Register</button>
+                        <button type="button" id="lgbtn">Login</button>
+                    </span>
                 </div>
             </nav>              
         </header>
         <main>
+            <div id="modalbox1" class="modal">
+                <div class="modal-content" id="rgcontent">
+                    <span class="close" id="rgclose">&times;</span>
+                    <p>Registration</p>
+                    <form>
+                        <div class="inline">
+                            <span class="iconspan"><i class="fas fa-user-alt"></i></span>
+                            <input type="text" placeholder="First Name" id="fname" required>
+                            <input type="text" placeholder="Last Name" id="lname" required>
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan"><i class="fas fa-envelope"></i></span>
+                            <input type="email" placeholder="E-mail" id="mail" required>
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan"><i class="fas fa-unlock"></i></span>
+                            <input type="password" placeholder="Password" id="pw" required>
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan"><i class="fas fa-phone"></i></span>
+                            <input type="tel" placeholder="Telephone" id="phone" required> 
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan"><i class="fas fa-edit"></i></span>
+                            <div class="radioline">
+                            <div class="radios">
+                                <input type="radio" name="course" value="english" id="english" required>
+                                <label for="english">English</label>
+                            </div>
+                            <div class="radios">
+                                <input type="radio" name="course" value="career" id="career" required>
+                                <label for="career">Career</label>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan iconselect"><i class="fas fa-angle-right"></i></span>
+                            <select name="selectlist" id="selectlist" required>
+
+                            </select>
+                        </div>
+                        <div class="inline">
+                            <span class="iconspan iconselect"><i class="fas fa-signal"></i></span>
+                            <select name="selectlist2" id="selectlist2" required>
+                                
+                            </select>
+                        </div>
+                        <div class="btnline">
+                            <button type="submit" class="regisbtn" id="submit">Submit</button>
+                            <button type="reset" class="regisbtn"  id="reset">Reset</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
+
+            <div id="modalbox2" class="modal">
+                <div class="modal-content" id="lgcontent">
+                    <span class="close" id="lgclose">&times;</span>
+                    <p>Login</p>
+                    <form>
+                        <div class="lgline">
+                            <span class="iconspan"><i class="fas fa-envelope"></i></span>
+                            <input type="email" placeholder="E-mail" id="mail2" required>
+                        </div>
+                        <div class="lgline">
+                            <span class="iconspan"><i class="fas fa-unlock"></i></span>
+                            <input type="password" placeholder="Password" id="pw2" required>
+                        </div>
+                        <div class="btnline">
+                            <button type="button" class="loginbtn" id="remem">Remember me</button>
+                            <button type="submit" class="loginbtn" id="login">Login</button>
+                        </div>
+                    </form> 
+                </div>
+            </div>
             <div class="container-fluid">
                 <section class="row row1">
                     <div class="col-lg-6 col-12 content1">
@@ -164,6 +240,11 @@
                 </div>
             </div>
         </footer>
+        <script>
+            $("#rgbtn").click(function(){
+                $("#modalbox1").css("display","block");
+            })
+        </script>
     </body>
-    <script src="js/bootstrap.bundle.js"></script>    
+    <script src="js/bootstrap.bundle.js"></script>  
 </html>
