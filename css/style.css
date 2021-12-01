@@ -16,6 +16,13 @@ body {
   padding: 0;
 }
 
+header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
 .row1 {
   padding: 7% 10%;
 }
@@ -276,7 +283,6 @@ body {
 
 .row5 .john {
   padding-top: 3rem;
-  z-index: 1;
 }
 
 .row5 .bgimage {
@@ -343,7 +349,6 @@ body {
   }
   .row5 .john {
     padding-top: 1.5rem;
-    z-index: 1;
   }
 }
 
@@ -538,26 +543,22 @@ footer .flex_container .sns2 a:hover {
   z-index: 1;
 }
 
-.active {
-  opacity: 1;
-  top: 50%;
-  right: 0;
-  -webkit-transform: translate(0%, -50%) scale(1);
-          transform: translate(0%, -50%) scale(1);
-  -webkit-transition: -webkit-transform 0.8s;
-  transition: -webkit-transform 0.8s;
-  transition: transform 0.8s;
-  transition: transform 0.8s, -webkit-transform 0.8s;
+.modaltitle {
+  font-size: 2rem;
+  text-align: center;
+  font-weight: bold;
+  margin-top: -1.5rem;
+  margin-bottom: 3rem;
 }
 
 .modal-content {
-  background-color: #f7f7f7;
+  background-color: #f8f6f4;
   margin: 5% auto;
-  padding: 3rem;
+  padding: 3.5rem 3rem;
   border: 1px solid #888;
-  width: 30%;
+  width: 38%;
+  min-width: 530px;
   border-radius: 5px;
-  min-width: 400px;
   -webkit-box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
           box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
@@ -569,6 +570,8 @@ footer .flex_container .sns2 a:hover {
   font-weight: bold;
   -webkit-transition: 0.5s;
   transition: 0.5s;
+  text-align: right;
+  z-index: 1;
 }
 
 .close:hover, .close:focus {
@@ -584,71 +587,82 @@ form {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 80%;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 85%;
 }
 
 div.inline {
   width: 100%;
-  height: 2.5rem;
+  height: 3.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-i {
-  background-color: #1564bf;
-  color: white;
-  padding: 10px;
-  border-radius: 30px;
-  margin-right: 5px;
-  width: 1rem;
-  text-align: center;
+div.inline label {
+  display: block;
+  width: 100%;
+  margin-bottom: 0;
+  font-size: 0.87em;
+  font-weight: bold;
 }
 
-input[type=text], input[type=email], input[type=password], input[type=tel] {
+.nameline {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+div.checkline {
+  font-size: 0.9em;
+}
+
+div.checkline input {
+  margin-right: 0.7em;
+}
+
+div.checkline span {
+  color: #6fa0df;
+}
+
+input[type=text] {
   outline: none;
   height: 2rem;
   border: none;
-  border-radius: 5px;
-  margin-left: 5px;
+  border-radius: 3px;
   padding-left: 8px;
+  width: 48%;
   -webkit-box-shadow: 1px 1px 2px #d8d7d7;
           box-shadow: 1px 1px 2px #d8d7d7;
-  width: 100%;
   -webkit-transition: 0.6s;
   transition: 0.6s;
 }
 
-.radioline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-}
-
-select {
-  right: 0;
-  width: 90%;
-  height: 2rem;
+input[type=email], input[type=password], input[type=tel], select {
   outline: none;
+  height: 2rem;
   border: none;
-  border-radius: 5px;
-  margin-left: 5px;
+  border-radius: 3px;
+  margin: 0;
   padding-left: 8px;
+  width: 100%;
   -webkit-box-shadow: 1px 1px 2px #d8d7d7;
           box-shadow: 1px 1px 2px #d8d7d7;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
 }
 
-select[disabled] {
-  background-color: #e6e6e6;
+input[placeholder] {
+  font-size: 0.8em;
 }
 
 option {
@@ -679,18 +693,12 @@ option {
   border-radius: 20px;
 }
 
-.regisbtn:hover {
-  cursor: pointer;
-}
-
 #submit {
   background-color: lightgreen;
 }
 
-#submit:hover {
-  background-color: #43e943;
-  -webkit-box-shadow: 2px 2px 2px #d8d7d7;
-          box-shadow: 2px 2px 2px #d8d7d7;
+#submit:disabled {
+  background-color: gray;
 }
 
 #submit:active {
