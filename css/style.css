@@ -543,6 +543,10 @@ footer .flex_container .sns2 a:hover {
   z-index: 1;
 }
 
+#lgcontent {
+  width: 500px;
+}
+
 .modaltitle {
   font-size: 2rem;
   text-align: center;
@@ -583,11 +587,9 @@ footer .flex_container .sns2 a:hover {
 form {
   display: -ms-grid;
   display: grid;
-  margin: auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 85%;
 }
 
 div.inline {
@@ -624,6 +626,9 @@ div.inline label {
 
 div.checkline {
   font-size: 0.9em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 div.checkline input {
@@ -634,7 +639,7 @@ div.checkline span {
   color: #6fa0df;
 }
 
-input[type=text] {
+#modalbox1 input[type=text] {
   outline: none;
   height: 2rem;
   border: none;
@@ -648,6 +653,20 @@ input[type=text] {
 }
 
 input[type=email], input[type=password], input[type=tel], select {
+  outline: none;
+  height: 2rem;
+  border: none;
+  border-radius: 3px;
+  margin: 0;
+  padding-left: 8px;
+  width: 100%;
+  -webkit-box-shadow: 1px 1px 2px #d8d7d7;
+          box-shadow: 1px 1px 2px #d8d7d7;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+#modalbox2 input {
   outline: none;
   height: 2rem;
   border: none;
@@ -676,15 +695,26 @@ option {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin-top: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.btnline2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .regisbtn {
-  width: 40%;
+  width: 120px;
   color: white;
   text-shadow: 1px 1px 2px darkgray;
-  padding: 0.8rem 2rem;
-  margin: 0 1rem;
+  padding: 15px 25px;
+  margin: 0 15px;
   border: none;
   -webkit-box-shadow: 1px 1px 1px #d8d7d7;
           box-shadow: 1px 1px 1px #d8d7d7;
@@ -693,12 +723,33 @@ option {
   border-radius: 20px;
 }
 
+.toregis, .tologin {
+  font-size: 0.8em;
+  text-align: center;
+}
+
+.toregis span, .tologin span {
+  color: blue;
+  font-style: oblique;
+  font-weight: bold;
+}
+
+.toregis span:hover, .tologin span:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
 #submit {
   background-color: lightgreen;
+  width: 150px;
+}
+
+#submit:hover {
+  background-color: #62e962;
 }
 
 #submit:disabled {
-  background-color: gray;
+  background-color: darkgray;
 }
 
 #submit:active {
@@ -707,11 +758,12 @@ option {
 }
 
 #reset {
-  background-color: lightsteelblue;
+  background-color: lightsalmon;
+  width: 150px;
 }
 
 #reset:hover {
-  background-color: #6fa0df;
+  background-color: #f77c4c;
   -webkit-box-shadow: 2px 2px 2px #d8d7d7;
           box-shadow: 2px 2px 2px #d8d7d7;
 }
@@ -721,35 +773,31 @@ option {
           box-shadow: 2px 2px 2px black;
 }
 
-.lgline {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  margin-bottom: 1.5rem;
-  margin-top: 0.3rem;
+#login {
+  background-color: lightpink;
 }
 
-.lgline input {
-  width: 300px;
-  height: 2.5rem;
-}
-
-.loginbtn {
-  width: 40%;
-  color: white;
-  text-shadow: 1px 1px 2px darkgray;
-  padding: 0.8rem 1rem;
-  margin: 0 1rem;
-  border: none;
-  -webkit-box-shadow: 1px 1px 1px #d8d7d7;
-          box-shadow: 1px 1px 1px #d8d7d7;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-  border-radius: 20px;
-}
-
-.loginbtn:hover {
+#login:hover {
   cursor: pointer;
+  background-color: #f78b9b;
+}
+
+#login:active {
+  -webkit-box-shadow: 2px 2px 2px #474747;
+          box-shadow: 2px 2px 2px #474747;
+}
+
+#showhide {
+  background-color: lightsteelblue;
+}
+
+#showhide:hover {
+  cursor: pointer;
+  background-color: #94b5e0;
+}
+
+#showhide:active {
+  -webkit-box-shadow: 2px 2px 2px #474747;
+          box-shadow: 2px 2px 2px #474747;
 }
 /*# sourceMappingURL=style.css.map */

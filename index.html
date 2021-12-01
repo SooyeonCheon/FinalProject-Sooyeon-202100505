@@ -26,7 +26,6 @@
                 <div class="modal-content" id="rgcontent">
                     <span class="close" id="rgclose">&times;</span>
                     <p class="modaltitle">Create your account</p>
-                    
                     <form>
                         <div class="inline">
                             <label class="lglabel" for="fname">Name </label>
@@ -51,33 +50,38 @@
                             <label class="lglabel" for="pwconfirm">Confirm password </label>
                             <input type="password" placeholder="Password" id="pwconfirm" required>
                         </div>
-                        <div class="inline checkline">
-                            <input type="checkbox"><div>I agree to the <span class="checkstyle"> customer agreement </span> and <span class="checkstyle"> privacy policy </span></div>
+                        <div class="checkline">
+                            <input type="checkbox" id="chkbox"><div>I agree to the <span class="checkstyle"> customer agreement </span> and <span class="checkstyle"> privacy policy </span></div>
                         </div>
                         <div class="btnline">
-                            <button type="submit" class="regisbtn" id="submit1" disabled>Submit</button>
-                            <button type="reset" class="regisbtn"  id="reset1">Reset</button>
+                            <button type="submit" class="regisbtn" id="submit">Submit</button>
+                            <button type="reset" class="regisbtn"  id="reset">Reset</button>
+                        </div>
+                        <div class="tologin">
+                            Do you have an account? <span id="logingo">Login</span>
                         </div>
                     </form> 
                 </div>
             </div>
-
             <div id="modalbox2" class="modal">
                 <div class="modal-content" id="lgcontent">
                     <span class="close" id="lgclose">&times;</span>
-                    <p class="modaltitle">Create your account</p>
+                    <p class="modaltitle">LOGIN</p>
                     <form>
                         <div class="inline">
                             <label class="lglabel" for="mail2">E-mail </label>
-                            <input type="email" placeholder="E-mail" id="mail2" required>
+                            <input type="email" placeholder="E-mail" id="mail2" >
                         </div>
                         <div class="inline">
                             <label class="lglabel" for="pw2">Password </label>
                             <input type="password" placeholder="Password" id="pw2" required>
                         </div>
-                        <div class="btnline">
-                            <button type="submit" class="regisbtn" id="submit22" disabled>Submit</button>
-                            <button type="reset" class="regisbtn"  id="reset22">Reset</button>
+                        <div class="toregis">
+                            Don't have an account? <span id="regisgo">Sign up</span>
+                        </div>
+                        <div class="btnline2">
+                            <button type="submit" class="regisbtn" id="login">Login</button>
+                            <button type="button" class="regisbtn"  id="showhide">Show Password</button>
                         </div>
                     </form> 
                 </div>
@@ -226,6 +230,94 @@
             </div>
         </footer>
         <script>
+            var fname = $("#fname");
+            var lname = $("#lname");
+            var mail = $("#mail");
+            var phone = $("#phone");
+            var pw = $("#pw");
+            var pw2 = $("#pwconfirm");
+            var chk = $("#chkbox");
+            
+            fname.blur(function(){
+                var pattern1 = /^[a-zA-Z]+[a-zA-Z]+$/;
+                if(pattern1.test(fname.val())==false){
+                    alert("Please enter first name correctly");
+                    fname.css("border","1px solid red");
+                    fname.css("color","red");
+                    $("#submit").attr("disabled","disabled");
+                }else{
+                    fname.css("border","none");
+                    fname.css("color","black");
+                    $("#submit").attr("disabled",false);
+                }
+            });
+            lname.blur(function(){
+                var pattern2 = /^[a-zA-Z]+[a-zA-Z]+$/;
+                if(pattern2.test(lname.val())==false){
+                    alert("Please enter last name correctly");
+                    lname.css("border","1px solid red");
+                    lname.css("color","red");
+                    $("#submit").attr("disabled","disabled");
+                }else{
+                    lname.css("border","none");
+                    lname.css("color","black");
+                    $("#submit").attr("disabled",false);
+                }
+            });
+            mail.blur(function(){
+                var pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                if(pattern3.test(mail.val())==false){
+                    alert("Please enter E-mail correctly");
+                    mail.css("border","1px solid red");
+                    mail.css("color","red");
+                    $("#submit").attr("disabled","disabled");
+                }else{
+                    mail.css("border","none");
+                    mail.css("color","black");
+                    $("#submit").attr("disabled",false);
+                }
+            });
+            phone.blur(function(){
+                var pattern4 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+                if(pattern4.test(phone.val())==false){
+                    alert("Please enter phone number correctly");
+                    phone.css("border","1px solid red");
+                    phone.css("color","red");
+                    $("#submit").attr("disabled","disabled");
+                }else{
+                    phone.css("border","none");
+                    phone.css("color","black");
+                    $("#submit").attr("disabled",false);
+                }
+            })
+            pw2.blur(function(){
+                if(pw.val() !== pw2.val()){
+                    alert("Please confirm the password");
+                    pw2.css("border","1px solid red");
+                    $("#submit").attr("disabled","disabled");
+                }else{
+                    pw2.css("border","none");
+                    $("#submit").attr("disabled",false);
+                }
+            })
+            $("#submit").click(function(){
+                if(chk.prop("checked")==false){
+                    event.preventDefault();
+                    pw.css("border","none");
+                    pw2.css("border","none");
+                    alert("Please check the agreement");
+                }
+            })
+            var pwbtn = $("#showhide");
+            pwbtn.click(function(){
+                if(pwbtn.html()=="Show Password"){
+                    $("#pw2").attr("type", "text");
+                    pwbtn.html("Hide Password");
+                }else{
+                    $("#pw2").attr("type", "password");
+                    pwbtn.html("Show Password");
+                }
+            })
             $("#rgbtn").click(function(){
                 $("#modalbox1").fadeIn();
             })
@@ -255,10 +347,36 @@
                 inputs[i].addEventListener('focus',function(event){
                     event.target.style.backgroundColor = "rgb(253,199,77)";
                 })
-                inputs[i].addEventListener('blur',function(event){
-                    event.target.style.backgroundColor = "white";
-                })
+                inputs[i].addEventListener('blur', changebg);
             }
+            function changebg(event){
+                if(event.type == "blur"){
+                    if(event.target.value == "" || event.target.value == null){
+                        event.target.style.backgroundColor = "yellow";
+                    }else{
+                        event.target.style.backgroundColor = "white";
+                    }
+                }
+            }
+            $("#login").click(function(){
+                var patternmail = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+                if($("#mail2").val()=="" || $("#pw2").val()==""){
+                    alert("Please enter E-mail and Password");
+                    event.preventDefault();
+                }else if(patternmail.test($("#mail2").val())==false){
+                    console.log(patternmail.test($("#mail2").val()));
+                    alert("Please enter E-mail correctly");
+                    event.preventDefault();
+                }
+            })
+           $("#regisgo").click(function(){
+            $("#modalbox2").hide();
+            $("#modalbox1").show();
+           })
+           $("#logingo").click(function(){
+            $("#modalbox1").hide();
+            $("#modalbox2").show();
+           })
 
         </script>
     </body>

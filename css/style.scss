@@ -447,6 +447,9 @@ footer{
     background-color: rgba(0, 0, 0, 0.424);
     z-index: 1;
 }
+#lgcontent{
+    width: 500px;
+}
 .modaltitle{
     font-size: 2rem;
     text-align: center;
@@ -480,9 +483,7 @@ footer{
 }
 form{
     display: grid;
-    margin: auto;
     justify-content: center;
-    width: 85%;
 }
 div.inline{
     width: 100%;
@@ -506,6 +507,7 @@ div.inline{
 }
 div.checkline{
     font-size: 0.9em;
+    display: flex;
     input{
         margin-right: 0.7em;
     }
@@ -513,7 +515,7 @@ div.checkline{
         color: rgb(111, 160, 223);
     }
 }
-input[type=text]{
+#modalbox1 input[type=text]{
     outline: none;
     height: 2rem;
     border: none;
@@ -534,6 +536,17 @@ input[type=email], input[type=password], input[type=tel], select{
     box-shadow: 1px 1px 2px rgb(216, 215, 215);
     transition: 0.6s;
 }
+#modalbox2 input{
+    outline: none;
+    height: 2rem;
+    border: none;
+    border-radius: 3px;
+    margin: 0;
+    padding-left: 8px;
+    width: 100%;
+    box-shadow: 1px 1px 2px rgb(216, 215, 215);
+    transition: 0.6s;
+}
 input[placeholder]{
     font-size: 0.8em;
 }
@@ -544,61 +557,81 @@ option{
 .btnline{
     display: flex;
     justify-content: space-between;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+}
+.btnline2{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
 }
 .regisbtn{
-    width: 40%;
+    width: 120px;
     color: white;
     text-shadow: 1px 1px 2px darkgray;
-    padding: 0.8rem 2rem;
-    margin: 0 1rem;
+    padding: 15px 25px;
+    margin: 0 15px;
     border: none;
     box-shadow: 1px 1px 1px rgb(216, 215, 215);
     transition: 0.5s;
     border-radius: 20px;
 }
-
+.toregis, .tologin{
+    font-size: 0.8em;
+    text-align: center;
+    span{
+        color: blue;
+        font-style: oblique;
+        font-weight: bold;
+        &:hover{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+    }
+}
 #submit{
     background-color: lightgreen;
+    width: 150px;
+}
+#submit:hover{
+    background-color: rgb(98, 233, 98);
 }
 #submit:disabled{
-    background-color: gray;
+    background-color: darkgray;
 }
-
 #submit:active{
     box-shadow: 2px 2px 2px black;
 }
 #reset{
-    background-color: lightsteelblue;
+    background-color: lightsalmon;
+    width: 150px;
 }
 #reset:hover{
-    background-color: rgb(111, 160, 223);
+    background-color: rgb(247, 124, 76);
     box-shadow: 2px 2px 2px rgb(216, 215, 215);
 }
 #reset:active{
     box-shadow: 2px 2px 2px black;
 }
-.lgline{
-    display: flex;
-    width: 100%;
-    margin-bottom: 1.5rem;
-    margin-top: 0.3rem;
+#login{
+    background-color: lightpink;
 }
-.lgline input{
-    width: 300px;
-    height: 2.5rem;
-}
-.loginbtn{
-    width: 40%;
-    color: white;
-    text-shadow: 1px 1px 2px darkgray;
-    padding: 0.8rem 1rem;
-    margin: 0 1rem;
-    border: none;
-    box-shadow: 1px 1px 1px rgb(216, 215, 215);
-    transition: 0.5s;
-    border-radius: 20px;
-}
-.loginbtn:hover{
+#login:hover{
     cursor: pointer;
+    background-color: rgb(247, 139, 155);
 }
+#login:active{
+    box-shadow: 2px 2px 2px rgb(71, 71, 71);
+}
+#showhide{
+    background-color: lightsteelblue;
+}
+#showhide:hover{
+    cursor: pointer;
+    background-color: rgb(148, 181, 224);
+}
+#showhide:active{
+    box-shadow: 2px 2px 2px rgb(71, 71, 71);
+}
+
