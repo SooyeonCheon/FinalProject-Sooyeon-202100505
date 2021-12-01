@@ -237,9 +237,11 @@
             var pw = $("#pw");
             var pw2 = $("#pwconfirm");
             var chk = $("#chkbox");
-            
+            var pattern1 = /^[a-zA-Z]+[a-zA-Z]+$/;
+            var pattern2 = /^[a-zA-Z]+[a-zA-Z]+$/;
+            var pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+            var pattern4 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
             fname.blur(function(){
-                var pattern1 = /^[a-zA-Z]+[a-zA-Z]+$/;
                 if(pattern1.test(fname.val())==false){
                     alert("Please enter first name correctly");
                     fname.css("border","1px solid red");
@@ -252,7 +254,6 @@
                 }
             });
             lname.blur(function(){
-                var pattern2 = /^[a-zA-Z]+[a-zA-Z]+$/;
                 if(pattern2.test(lname.val())==false){
                     alert("Please enter last name correctly");
                     lname.css("border","1px solid red");
@@ -265,7 +266,6 @@
                 }
             });
             mail.blur(function(){
-                var pattern3 = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
                 if(pattern3.test(mail.val())==false){
                     alert("Please enter E-mail correctly");
                     mail.css("border","1px solid red");
@@ -278,7 +278,6 @@
                 }
             });
             phone.blur(function(){
-                var pattern4 = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
                 if(pattern4.test(phone.val())==false){
                     alert("Please enter phone number correctly");
                     phone.css("border","1px solid red");
@@ -301,10 +300,12 @@
                 }
             })
             $("#submit").click(function(){
-                if(chk.prop("checked")==false){
+                if(pattern1.test(fname.val())==false || pattern2.test(lname.val())==false || pattern3.test(mail.val())==false || pattern4.test(phone.val())==false || pw.val() !== pw2.val()){
                     event.preventDefault();
-                    pw.css("border","none");
-                    pw2.css("border","none");
+                    alert("Please fill out the form correctly");
+                }
+                else if(chk.prop("checked")==false){
+                    event.preventDefault();
                     alert("Please check the agreement");
                 }
             })
